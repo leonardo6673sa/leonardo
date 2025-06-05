@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Conexão Campo e Cidade</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+  :root {
+    --green-field: #e32222;
+    --green-light: #189b30;
+    --blue-city: #189b30;
+    --blue-light: #e32222;
+    --bg-light: #ffffff;
+    --dark-text: #000000;
+    --transition: 0.3s ease;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg-light);
+    color: var(--dark-text);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    background: linear-gradient(90deg, var(--green-field) 50%, var(--blue-city) 50%);
+    padding: 2rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 2rem;
+    background: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    max-width: 1000px;
+    margin: 2rem auto;
+    border-radius: 12px;
+  }
+
+  section {
+    flex: 1 1 320px;
+    border-radius: 12px;
+    padding: 1.5rem 2rem 2rem 2rem;
+    color: white;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform var(--transition);
+    cursor: default;
+    user-select: none;
+  }
+
+  section:hover {
+    transform: scale(1.05);
+  }
+
+  .campo {
+    background: linear-gradient(135deg, var(--green-light), var(--green-field));
+    box-shadow: 0 8px 30px rgba(76,175,80,0.6);
+  }
+
+  .cidade {
+    background: linear-gradient(135deg, var(--blue-light), var(--blue-city));
+    box-shadow: 0 8px 30px rgba(33,150,243,0.6);
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin: 1rem 0 1rem 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    user-select: none;
+  }
+
+  .connection {
+    flex-basis: 100%;
+    margin: 3rem 0 0 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #555;
+    user-select: none;
+    letter-spacing: 1.5px;
+  }
+
+  /* Small decorative bridge */
+  .bridge {
+    position: relative;
+    width: 200px;
+    height: 20px;
+    margin: 1rem auto 0 auto;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 20px;
+    width: 40px;
+    border-radius: 12px;
+  }
+
+  .bridge::before {
+    left: 0;
+    background: var(--green-field);
+    box-shadow: 4px 0 0 var(--green-field), 8px 0 0 var(--green-field);
+  }
+  .bridge::after {
+    right: 0;
+    background: var(--blue-city);
+    box-shadow: -4px 0 0 var(--blue-city), -8px 0 0 var(--blue-city);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 680px) {
+    main {
+      flex-direction: column;
+      padding: 1rem;
+      max-width: 90vw;
+    }
+    section {
+      width: 100%;
+      min-width: unset;
+    }
+    .connection {
+      font-size: 1.3rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  Conexão Campo e Cidade
+</header>
+<main>
+  <section class="campo" aria-label="Campo">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Paisagem do campo com uma estrada e árvores verdes" loading="lazy" />
+    <h2>Campo</h2>
+    <p>
+      O campo, com seus horizontes abertos e ritmo cadenciado, é a raiz da nossa existência. É o berço da natureza intocada, onde o ar puro revigora e o silêncio é quebrado apenas pelos sons da fauna e do vento nas árvores. A vida rural é um testemunho da resiliência e sabedoria de gerações, que aprenderam a decifrar os segredos da terra e a cultivar o alimento que chega à nossa mesa.
+
+    </p>
+    <p>
+    Mais do que apenas um espaço de produção, o campo é um modo de vida. Aqui, as relações humanas são mais próximas, a comunidade se fortalece no auxílio mútuo e os valores de simplicidade e autenticidade são cultivados. É no campo que nos reconectamos com o essencial, que observamos o ciclo da vida em sua plenitude – do plantio à colheita, do nascer ao pôr do sol. É um convite à contemplação, à gratidão e à redescoberta da nossa própria natureza.
+    </p>
+  </section>
+  <section class="cidade" aria-label="Cidade">
+    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80" alt="Horizonte de uma cidade moderna com edifícios altos" loading="lazy" />
+    <h2>Cidade</h2>
+    <p>
+      A cidade é um organismo vivo e pulsante, um epicentro de oportunidades e diversidade. Com seus arranha-céus que desafiam o céu e sua rede complexa de ruas e avenidas, ela representa a evolução constante da sociedade humana. É o palco onde se encontram mentes brilhantes, onde a cultura e a arte florescem em suas mais variadas formas, e onde a inovação é a força motriz que impulsiona o progresso.
+    </p>
+    <p>
+      A vida urbana é um mosaico de experiências e encontros. A energia das grandes metrópoles estimula a criatividade, fomenta o empreendedorismo e oferece um leque quase ilimitado de possibilidades para o desenvolvimento pessoal e profissional. Apesar do ritmo acelerado, a cidade proporciona uma rica troca de ideias, um caldeirão de culturas e a chance de estar sempre conectado com o que há de mais novo no mundo. Ela nos desafia a expandir nossos horizontes e a abraçar a complexidade da vida contemporânea.
+    </p>
+  </section>
+  <div class="connection" aria-hidden="true">
+    <div class="bridge"></div>
+    <span>União e equilíbrio entre campo e cidade</span>
+  </div>
+</main>
+</body>
+</html>
+
+
+
